@@ -30,6 +30,6 @@ export const Infos = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	color: ${themes.colors.summaryTextGrey};
+	color: ${themes.colors.textGrey};
 	margin-bottom: 1.5em;
 `;

@@ -7,7 +7,9 @@ export const themes = {
       white: '#fff',
       grey: '#323238',
       amountGreen: '#015F43',
-      summaryTextGrey: '#C4C4CC',
-      veryLightGrey: '#E1E1E6'
+      textGrey: '#C4C4CC',
+      veryLightGrey: '#E1E1E6',
+      lineGrey: '#29292E',
+      red: '#F75A68'
    } 
 };

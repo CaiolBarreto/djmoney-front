@@ -30,6 +30,11 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
 
+  :focus {
+    outline: transparent;
+    box-shadow: 0 0 0 2px ${themes.colors.lightGreen};
+  }
+
   [disabled] {
     opacity: 0.6;
     cursor: not-allowed;
