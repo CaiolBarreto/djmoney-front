@@ -1,10 +1,11 @@
 import { Container, Content } from './style';
 import { Logo } from '../../assets';
+import Image from 'next/image'
 
 export const Header = () => (
   <Container>
     <Content>
-      <img src={Logo} alt="logo" />
+      <Image src={Logo} />
       <button type="button">
         Nova transação
       </button>
