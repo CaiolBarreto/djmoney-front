@@ -49,6 +49,11 @@ export const Search = styled.div`
     padding: 1rem 1rem 0 1rem;
     background-color: ${themes.colors.headerBackground};
     color: ${themes.colors.textGrey};
+    transition: ease .2s;
+
+    :focus {
+      box-shadow: 0 0 0 2px ${themes.colors.lightGreen};
+    }
   }
 
   button {

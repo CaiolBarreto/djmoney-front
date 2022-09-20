@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 import { SearchIcon } from '../../assets';
 
 type LineInfos = {
+	id: string;
 	type: string;
 	title: string;
 	value: number;
@@ -60,7 +61,7 @@ export const Table = () => {
 				<tbody>
 					{infos.map(line => {
 						return (
-							<tr>
+							<tr key={line.id}>
 								<td>{line.title}</td>
 								<td className={line.type}>
 									{handleFormatValue(line.value, line.type)}
