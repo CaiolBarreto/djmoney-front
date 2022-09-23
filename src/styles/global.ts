@@ -2,8 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 import { themes } from './theme';
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
   * {
     margin: 0;
     padding: 0;
@@ -60,5 +58,13 @@ export const GlobalStyle = createGlobalStyle`
     padding: 3rem;
     position: relative;
     border-radius: 6px;
+  }
+
+  .react-modal-close {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    border: 0;
+    background: transparent;
   }
 `

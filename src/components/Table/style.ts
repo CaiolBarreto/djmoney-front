@@ -9,6 +9,7 @@ export const Container = styled.div`
     width: 100%;
     border-spacing: 0 0.5rem;
     color: ${themes.colors.textGrey};
+    margin-bottom: 3.5rem;
   }
 
   th {

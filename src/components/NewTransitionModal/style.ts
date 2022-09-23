@@ -39,6 +39,12 @@ export const Container = styled.div`
       filter: brightness(1.2);
     }
   }
+
+  .close {
+    justify-content: right;
+    background-color: red;
+    width: 30%;
+  }
 `;
 
 export const TypeButtons = styled.div`

@@ -8,7 +8,6 @@ export const Header = () => {
 
   const openTransitionModal = () => {
     setIsNewTransitionModalOpen(true);
-    console.log('oxe boy');
   }
 
   return (
