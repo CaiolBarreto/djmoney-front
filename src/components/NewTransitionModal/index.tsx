@@ -55,6 +55,7 @@ export const NewTransitionModal = () => {
         date: nowDate
       });
     setTransitions([response.data.data, ...transitions]);
+    closeTransitionModal();
   }
 
   return (
