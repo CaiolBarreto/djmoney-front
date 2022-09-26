@@ -73,31 +73,31 @@ export const NewTransitionModal = () => {
         <Image src={CloseModalIcon} alt="close-modal" className='close' />
       </button>
       <Container>
-        <h2>Nova transação</h2>
+        <h2>New transaction</h2>
         <input
-          placeholder='Descrição'
+          placeholder='Description'
           value={description}
           onChange={(event) => setDescription(event.target.value)}
         />
         <input
           type='number'
-          placeholder='Preço'
+          placeholder='Price'
           value={value}
           onChange={(event) => setValue(Number(event.target.value))}
         />
         <input
-          placeholder='Categoria'
+          placeholder='Category'
           value={category}
           onChange={(event) => setCategory(event.target.value)}
         />
         <TypeButtons>
           <EntryButton onClick={onEntryClicks} isActive={isEntry}>
             <Image src={Entries} alt="entry" />
-            Entrada
+            Deposit
           </EntryButton>
           <ExitButton onClick={onExitClicks} isActive={isExit}>
             <Image src={Exits} alt="exit" />
-            Saída
+            Withdraw
           </ExitButton>
         </TypeButtons>
         <button

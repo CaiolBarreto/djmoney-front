@@ -42,12 +42,13 @@ export const Search = styled.div`
   justify-content: space-between;
   height: 3rem;
 
-  textarea {
+  input {
     width: 100%;
     border: 0;
     resize: none;
     border-radius: 6px;
-    padding: 1rem 1rem 0 1rem;
+    padding-left: 1rem;
+    font-size: 1rem;
     background-color: ${themes.colors.headerBackground};
     color: ${themes.colors.textGrey};
     transition: ease .2s;

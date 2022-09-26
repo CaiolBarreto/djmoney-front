@@ -26,7 +26,7 @@ export const TransitionProvider = ({ children }: TransitionProps) => {
 
   const getTransition = async () => {
     const response = await axios.get('http://localhost:3001/transition');
-    setTransitions(response.data.data);
+    setTransitions(response.data.data.reverse());
   };
 
   useEffect(() => {

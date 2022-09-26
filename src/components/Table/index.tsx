@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { useTransition } from '../../context/transationsContext';
 import { Container, Search } from './style';
 
 export const Table = () => {
 	const { transitions } = useTransition();
+	const [searchInput, setSearchInput] = useState('');
+	const [query, setQuery] = useState('');
 
 	const handleFormatValue = (value: number, type: string) => {
 		if (type === 'entry') {
@@ -15,8 +18,15 @@ export const Table = () => {
 	return (
 		<Container>
 			<Search>
-				<textarea placeholder='Busque uma transação'></textarea>
-				<button type='button'>
+				<input
+					placeholder='Search for a transaction'
+					onChange={(event) => setSearchInput(event.target.value)}
+					value={searchInput}
+				/>
+				<button
+					type='button'
+					onClick={() => setQuery(searchInput)}
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
@@ -31,20 +41,22 @@ export const Table = () => {
 							d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
 						/>
 					</svg>
-					<p>Buscar</p>
+					<p>Search</p>
 				</button>
 			</Search>
 			<table>
 				<thead>
 					<tr>
-						<th>Título</th>
-						<th>Valor</th>
-						<th>Categoria</th>
-						<th>Data</th>
+						<th>Title</th>
+						<th>Price</th>
+						<th>Category</th>
+						<th>Date</th>
 					</tr>
 				</thead>
 				<tbody>
-					{transitions?.map(line => {
+					{transitions.filter((transition) =>
+						transition.title.toLowerCase().includes(query)
+					).map(line => {
 						return (
 							<tr key={line.id}>
 								<td>{line.title}</td>

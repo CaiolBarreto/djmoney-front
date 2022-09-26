@@ -18,7 +18,7 @@ export const Header = () => {
           type="button"
           onClick={openTransitionModal}
         >
-          Nova transação
+          New transaction
         </button>
       </Content>
     </Container>

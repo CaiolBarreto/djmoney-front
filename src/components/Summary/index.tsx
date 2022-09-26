@@ -26,25 +26,25 @@ export const Summary = () => {
 		<Container>
 			<Card>
 				<Infos>
-					<p>Entradas</p>
+					<p>Deposits</p>
 					<Image src={Entries} alt="entries" />
 				</Infos>
 				<h3>
-					{new Intl.NumberFormat('pt-BR', {
+					{new Intl.NumberFormat('en', {
 						style: 'currency',
-						currency: 'BRL'
+						currency: 'USD'
 					}).format(summary.entries)}
 				</h3>
 			</Card>
 			<Card>
 				<Infos>
-					<p>Saídas</p>
+					<p>Withdraws</p>
 					<Image src={Exits} alt="exits" />
 				</Infos>
 				<h3>
-					{new Intl.NumberFormat('pt-BR', {
+					{new Intl.NumberFormat('en', {
 						style: 'currency',
-						currency: 'BRL'
+						currency: 'USD'
 					}).format(summary.exits)}
 				</h3>
 			</Card>
@@ -54,9 +54,9 @@ export const Summary = () => {
 					<Image src={DollarSign} alt="dollar sign" />
 				</Infos>
 				<h3>
-					{new Intl.NumberFormat('pt-BR', {
+					{new Intl.NumberFormat('en', {
 						style: 'currency',
-						currency: 'BRL'
+						currency: 'USD'
 					}).format(summary.total)}
 				</h3>
 			</Card>
