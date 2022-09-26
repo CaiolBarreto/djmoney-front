@@ -4,21 +4,23 @@ import { Container, TypeButtons, EntryButton, ExitButton } from './style';
 import { Entries, Exits, CloseModalIcon } from '../../assets';
 import Image from 'next/image';
 import { useState } from 'react';
-import axios from 'axios';
 import { useTransition } from '../../context/transationsContext';
+import axios from 'axios';
 
 export const NewTransitionModal = () => {
   const { isNewTransitionModalOpen, setIsNewTransitionModalOpen } = useHandleModal();
-  const { setTransitions } = useTransition();
+  const { transitions, setTransitions } = useTransition();
   const [isEntry, setIsEntry] = useState<boolean>(false);
   const [isExit, setIsExit] = useState<boolean>(false);
   const [description, setDescription] = useState<string>('');
   const [value, setValue] = useState<number>(0);
   const [category, setCategory] = useState<string>('');
 
-
   const closeTransitionModal = () => {
     setIsNewTransitionModalOpen(false);
+    setDescription('');
+    setValue(0);
+    setCategory('');
     setIsEntry(false);
     setIsExit(false);
   }
@@ -33,18 +35,26 @@ export const NewTransitionModal = () => {
     setIsEntry(false);
   };
 
+  const formatDate = () => {
+    const date = new Date();
+    return [
+      date.getDate().toString().padStart(2, '0'),
+      (date.getMonth() + 1).toString().padStart(2, '0'),
+      date.getFullYear()
+    ].join('/')
+  }
+
   const createTransition = async () => {
     const transitionType = isEntry ? 'entry' : 'exit';
-    const nowDate = new Date();
+    const nowDate = formatDate();
     const response = await axios.post('http://localhost:3001/transition', {
-      type: transitionType,
-      title: description,
-      value: value,
-      cateogry: category,
-      date: nowDate
-    });
-    const { data } = response.data;
-    setTransitions(data);
+        type: transitionType,
+        title: description,
+        value: value,
+        category: category,
+        date: nowDate
+      });
+    setTransitions([response.data.data, ...transitions]);
   }
 
   return (
